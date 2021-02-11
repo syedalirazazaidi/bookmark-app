@@ -1,5 +1,10 @@
 import React from "react"
+import BookMark from "../components"
 
 export default function Home() {
-  return <div>Hello world!</div>
+  return (
+    <div>
+      <BookMark />
+    </div>
+  )
 }
