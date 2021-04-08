@@ -93,19 +93,9 @@ const server = new ApolloServer({
 })
 exports.handler = server.createHandler()
 
-// "graphql": "^15.5.0",
-
 // "dependencies": {
 //   "apollo-server": "^2.20.0",
 //   "apollo-server-lambda": "^2.17.0",
 //   "faunadb": "^3.0.1",
 //   "graphql": "^14.7.0"
 // }
-// "apollo-server": "^2.22.2",
-// "apollo-server-lambda": "^2.22.2",
-// "graphql": "^15.5.0"
-
-// "apollo-server": "^2.20.0",
-//     "apollo-server-lambda": "^2.17.0",
-//     "graphql": "^14.7.0",
-//     "faunadb": "^3.0.1",
