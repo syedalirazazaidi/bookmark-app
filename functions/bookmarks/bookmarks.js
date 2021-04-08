@@ -18,23 +18,7 @@ const typeDefs = gql`
     removeBookmark(id: ID!): Bookmark
   }
 `
-// const authors = [
-//   {
-//     id: 1,
-//     url: "https://github.com/gatsbyjs/gatsby-starter-hello-world",
-//     description: "this is a github gatsby official repository",
-//   },
-//   {
-//     id: 2,
-//     url: "https://github.com/gatsbyjs/gatsby-starter-hello-world",
-//     description: "this is a github gatsby official repository",
-//   },
-//   {
-//     id: 3,
-//     url: "https://github.com/gatsbyjs/gatsby-starter-hello-world",
-//     description: "this is a github gatsby official repository",
-//   },
-// ]
+
 const resolvers = {
   Query: {
     bookmark: async (parent, args, context) => {
@@ -46,7 +30,7 @@ const resolvers = {
 
         const result = await client.query(
           q.Map(
-            q.Paginate(q.Documents(q.Collection("tech"))),
+            q.Paginate(q.Documents(q.Collection("book"))),
             q.Lambda(x => q.Get(x))
           )
         )
@@ -71,7 +55,7 @@ const resolvers = {
         })
 
         const result = await client.query(
-          q.Create(q.Collection("tech"), {
+          q.Create(q.Collection("book"), {
             data: {
               url: url,
               description: description,
@@ -91,7 +75,7 @@ const resolvers = {
         })
 
         const result = await client.query(
-          q.Delete(q.Ref(q.Collection("tech"), id))
+          q.Delete(q.Ref(q.Collection("book"), id))
         )
 
         console.log("id", id)
@@ -110,3 +94,18 @@ const server = new ApolloServer({
 exports.handler = server.createHandler()
 
 // "graphql": "^15.5.0",
+
+// "dependencies": {
+//   "apollo-server": "^2.20.0",
+//   "apollo-server-lambda": "^2.17.0",
+//   "faunadb": "^3.0.1",
+//   "graphql": "^14.7.0"
+// }
+// "apollo-server": "^2.22.2",
+// "apollo-server-lambda": "^2.22.2",
+// "graphql": "^15.5.0"
+
+// "apollo-server": "^2.20.0",
+//     "apollo-server-lambda": "^2.17.0",
+//     "graphql": "^14.7.0",
+//     "faunadb": "^3.0.1",
