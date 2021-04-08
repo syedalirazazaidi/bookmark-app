@@ -16,7 +16,7 @@
   "license": "MIT",
   "dependencies": {
    
-    "faunadb": "^3.0.1"
+  
    
   }
 }
